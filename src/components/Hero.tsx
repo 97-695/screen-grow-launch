@@ -1,13 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Star } from "lucide-react";
-import heroImage from "@/assets/hero-product.jpg";
 
 const Hero = () => {
-  const scrollToCheckout = () => {
-    const checkoutSection = document.getElementById('checkout');
-    checkoutSection?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section className="relative overflow-hidden bg-gradient-subtle">
       {/* Announcement Bar */}
@@ -26,20 +20,20 @@ const Hero = () => {
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Transforme Seu Celular em Uma{" "}
-              <span className="text-primary">TV de Tela Grande</span>
+              <span className="text-primary">Tela Grande</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-              Amplifique sua tela até 3x com design nostálgico de TV retrô. 
-              Perfeito para filmes, séries e games - sem precisar de energia, WiFi ou Bluetooth!
+              Amplifique a tela do seu smartphone até 3x com design nostálgico de TV retrô. 
+              Perfeito para assistir filmes, séries e vídeos no celular - sem precisar de energia, WiFi ou Bluetooth!
             </p>
 
             {/* Price Section */}
             <div className="flex items-center justify-center lg:justify-start gap-4 py-4">
               <div className="text-left">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-5xl font-bold text-foreground">$21</span>
-                  <span className="text-3xl text-muted-foreground line-through">$40</span>
+                  <span className="text-5xl font-bold text-foreground">R$ 59,90</span>
+                  <span className="text-3xl text-muted-foreground line-through">R$ 119,80</span>
                   <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-lg text-sm font-bold">
                     -50%
                   </span>
@@ -53,11 +47,11 @@ const Hero = () => {
               <Button 
                 size="xl" 
                 variant="cta" 
-                onClick={scrollToCheckout}
+                onClick={() => window.location.href = 'https://go.ironpayapp.com.br/dqqxi7fw1g'}
                 className="group"
               >
                 <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                Comprar Agora
+                Garantir Meu Screen Grow
               </Button>
               <Button 
                 size="xl" 
@@ -83,7 +77,7 @@ const Hero = () => {
                 <div className="w-5 h-5 rounded-full bg-success/20 flex items-center justify-center">
                   <span className="text-success text-xs">✓</span>
                 </div>
-                <span>Garantia de Satisfação</span>
+                <span>Boleto e Cartão</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full bg-success/20 flex items-center justify-center">
@@ -98,7 +92,7 @@ const Hero = () => {
           <div className="relative animate-scale-in">
             <div className="relative rounded-2xl overflow-hidden shadow-soft">
               <img 
-                src={heroImage} 
+                src="https://screengrow.shop/cdn/shop/files/image0_4.gif?v=1757244892&width=1200" 
                 alt="Screen Grow™ - Amplificador de Tela Retrô para Smartphone"
                 className="w-full h-auto"
               />

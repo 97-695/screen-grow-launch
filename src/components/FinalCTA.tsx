@@ -3,11 +3,6 @@ import { ShoppingCart, Star, CheckCircle } from "lucide-react";
 import detailImage from "@/assets/detail-shot.jpg";
 
 const FinalCTA = () => {
-  const scrollToCheckout = () => {
-    const checkoutSection = document.getElementById('checkout');
-    checkoutSection?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="checkout" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -32,13 +27,13 @@ const FinalCTA = () => {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold">
-                Pronto Para Transformar Sua Experiência de Entretenimento?
+                Pronto Para Transformar a Experiência no Seu Celular?
               </h2>
 
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Amplificação de tela 3x maior para máximo conforto</span>
+                  <span className="text-muted-foreground">Amplificação 3x maior para assistir vídeos com máximo conforto</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
@@ -50,7 +45,7 @@ const FinalCTA = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">Garantia de satisfação de 30 dias</span>
+                  <span className="text-muted-foreground">Aceitamos boleto e cartão de crédito</span>
                 </div>
               </div>
 
@@ -59,15 +54,15 @@ const FinalCTA = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <div className="text-sm text-muted-foreground mb-1">Preço Original</div>
-                    <div className="text-2xl text-muted-foreground line-through">$40.00</div>
+                    <div className="text-2xl text-muted-foreground line-through">R$ 119,80</div>
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-muted-foreground mb-1">Preço Hoje</div>
-                    <div className="text-4xl font-bold text-primary">$21.00</div>
+                    <div className="text-4xl font-bold text-primary">R$ 59,90</div>
                   </div>
                 </div>
                 <div className="bg-destructive/10 text-destructive px-4 py-2 rounded-lg text-center font-semibold text-sm">
-                  🔥 ECONOMIZE $19.00 (50% OFF) - VÁLIDO HOJE!
+                  🔥 ECONOMIZE R$ 59,90 (50% OFF) - VÁLIDO HOJE!
                 </div>
               </div>
 
@@ -75,15 +70,15 @@ const FinalCTA = () => {
               <Button 
                 size="xl" 
                 variant="cta"
-                onClick={scrollToCheckout}
+                onClick={() => window.location.href = 'https://go.ironpayapp.com.br/dqqxi7fw1g'}
                 className="w-full text-lg"
               >
                 <ShoppingCart className="w-5 h-5" />
-                Adicionar ao Carrinho - $21.00
+                Garantir Meu Screen Grow - R$ 59,90
               </Button>
 
               <p className="text-xs text-center text-muted-foreground">
-                🔒 Pagamento seguro via SSL • 📦 Envio rastreado • 💯 Garantia de 30 dias
+                🔒 Pagamento seguro • 💳 Aceitamos boleto e cartão de crédito • 📦 Envio rastreado
               </p>
             </div>
           </div>

@@ -4,7 +4,7 @@ const benefits = [
   {
     icon: Tv,
     title: "Tela 3x Maior",
-    description: "Amplifique sua experiência visual - transforme seu smartphone numa tela grande estilo TV"
+    description: "Amplifique a tela do seu celular - transforme seu smartphone numa experiência visual incrível"
   },
   {
     icon: Battery,
@@ -29,7 +29,7 @@ const benefits = [
   {
     icon: Gift,
     title: "Design Retrô",
-    description: "Visual nostálgico de TV antiga que combina estilo vintage com funcionalidade moderna"
+    description: "Visual nostálgico que combina estilo vintage com funcionalidade moderna para seu celular"
   }
 ];
 

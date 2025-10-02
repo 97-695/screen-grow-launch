@@ -28,11 +28,11 @@ const faqs = [
   },
   {
     question: "Quanto tempo leva o envio?",
-    answer: "Oferecemos envio rápido e rastreado. A maioria dos pedidos chega em 7-14 dias úteis, dependendo da sua localização."
+    answer: "Oferecemos envio rápido e rastreado. A maioria dos pedidos é entregue em até 10 dias úteis após a postagem."
   },
   {
-    question: "Qual é a política de devolução?",
-    answer: "Oferecemos uma garantia de satisfação de 30 dias. Se você não estiver completamente satisfeito, pode devolver o produto para um reembolso total - sem perguntas."
+    question: "Quais formas de pagamento aceitam?",
+    answer: "Aceitamos pagamento via boleto bancário e cartão de crédito. Todos os pagamentos são processados de forma 100% segura."
   }
 ];
 

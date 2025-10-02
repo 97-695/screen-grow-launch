@@ -32,8 +32,7 @@ const LimitedOffer = () => {
   }, []);
 
   const scrollToCheckout = () => {
-    const checkoutSection = document.getElementById('checkout');
-    checkoutSection?.scrollIntoView({ behavior: 'smooth' });
+    window.location.href = 'https://go.ironpayapp.com.br/dqqxi7fw1g';
   };
 
   return (
@@ -76,7 +75,7 @@ const LimitedOffer = () => {
               onClick={scrollToCheckout}
               className="text-lg px-12 mb-8"
             >
-              Aproveitar Oferta Agora
+              Garantir Meu Screen Grow
             </Button>
           </div>
 
