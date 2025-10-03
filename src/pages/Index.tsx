@@ -6,10 +6,12 @@ import Guarantee from "@/components/Guarantee";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import SpinWheel from "@/components/SpinWheel";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <SpinWheel />
       <Hero />
       <Benefits />
       <SocialProof />

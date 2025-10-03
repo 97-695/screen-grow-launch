@@ -32,8 +32,8 @@ const Hero = () => {
             <div className="flex items-center justify-center lg:justify-start gap-4 py-4">
               <div className="text-left">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-5xl font-bold text-foreground">R$ 59,90</span>
-                  <span className="text-3xl text-muted-foreground line-through">R$ 119,80</span>
+                  <span className="text-5xl font-bold text-foreground">R$ 159,90</span>
+                  <span className="text-3xl text-muted-foreground line-through">R$ 319,80</span>
                   <span className="bg-destructive text-destructive-foreground px-3 py-1 rounded-lg text-sm font-bold">
                     -50%
                   </span>

@@ -54,15 +54,15 @@ const FinalCTA = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <div className="text-sm text-muted-foreground mb-1">Preço Original</div>
-                    <div className="text-2xl text-muted-foreground line-through">R$ 119,80</div>
+                    <div className="text-2xl text-muted-foreground line-through">R$ 319,80</div>
                   </div>
                   <div className="text-right">
                     <div className="text-sm text-muted-foreground mb-1">Preço Hoje</div>
-                    <div className="text-4xl font-bold text-primary">R$ 59,90</div>
+                    <div className="text-4xl font-bold text-primary">R$ 159,90</div>
                   </div>
                 </div>
                 <div className="bg-destructive/10 text-destructive px-4 py-2 rounded-lg text-center font-semibold text-sm">
-                  🔥 ECONOMIZE R$ 59,90 (50% OFF) - VÁLIDO HOJE!
+                  🔥 ECONOMIZE R$ 159,90 (50% OFF) - VÁLIDO HOJE!
                 </div>
               </div>
 
@@ -74,7 +74,7 @@ const FinalCTA = () => {
                 className="w-full text-lg"
               >
                 <ShoppingCart className="w-5 h-5" />
-                Garantir Meu Screen Grow - R$ 59,90
+                Garantir Meu Screen Grow - R$ 159,90
               </Button>
 
               <p className="text-xs text-center text-muted-foreground">
