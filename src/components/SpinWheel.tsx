@@ -121,10 +121,14 @@ const SpinWheel = () => {
                   const largeArcFlag = 0;
                   const path = `M 100 100 L ${x1} ${y1} A 95 95 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
 
-                  // Text position
-                  const textRadius = 60;
+                  // Text position - adjusted for better readability
+                  const textRadius = 65;
                   const textX = 100 + textRadius * Math.cos((midAngle * Math.PI) / 180);
                   const textY = 100 + textRadius * Math.sin((midAngle * Math.PI) / 180);
+
+                  // Split text for longer prizes
+                  const words = prize.text.split(' ');
+                  const isLongText = words.length > 1;
 
                   return (
                     <g key={prize.id}>
@@ -135,19 +139,50 @@ const SpinWheel = () => {
                         strokeWidth="3"
                         className="transition-opacity"
                       />
-                      <text
-                        x={textX}
-                        y={textY}
-                        fill="white"
-                        fontSize="11"
-                        fontWeight="900"
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                        transform={`rotate(${midAngle + 90}, ${textX}, ${textY})`}
-                        style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
-                      >
-                        {prize.text}
-                      </text>
+                      {isLongText ? (
+                        <>
+                          <text
+                            x={textX}
+                            y={textY - 5}
+                            fill="white"
+                            fontSize="9"
+                            fontWeight="900"
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                            transform={`rotate(${midAngle + 90}, ${textX}, ${textY - 5})`}
+                            style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
+                          >
+                            {words[0]}
+                          </text>
+                          <text
+                            x={textX}
+                            y={textY + 6}
+                            fill="white"
+                            fontSize="9"
+                            fontWeight="900"
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                            transform={`rotate(${midAngle + 90}, ${textX}, ${textY + 6})`}
+                            style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
+                          >
+                            {words.slice(1).join(' ')}
+                          </text>
+                        </>
+                      ) : (
+                        <text
+                          x={textX}
+                          y={textY}
+                          fill="white"
+                          fontSize="11"
+                          fontWeight="900"
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          transform={`rotate(${midAngle + 90}, ${textX}, ${textY})`}
+                          style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}
+                        >
+                          {prize.text}
+                        </text>
+                      )}
                     </g>
                   );
                 })}
