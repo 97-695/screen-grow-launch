@@ -43,11 +43,11 @@ const Cep = () => {
     setTimeout(() => {
       toast({
         title: "✓ CEP Válido!",
-        description: "Redirecionando para finalizar sua compra...",
+        description: "Redirecionando para o pagamento...",
       });
       
       setTimeout(() => {
-        window.location.href = 'https://go.ironpayapp.com.br/dqqxi7fw1g';
+        window.location.href = 'https://go.invictuspay.app.br/6l6axoqwwl';
       }, 1000);
     }, 1000);
   };
@@ -104,7 +104,7 @@ const Cep = () => {
                   Verificando...
                 </span>
               ) : (
-                "🚀 CONTINUAR PARA O CHECKOUT"
+                "💳 IR PARA PAGAMENTO"
               )}
             </Button>
 
