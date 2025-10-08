@@ -229,7 +229,7 @@ const SpinWheel = () => {
               variant="cta"
               onClick={() => {
                 setIsOpen(false);
-                window.location.href = 'https://go.ironpayapp.com.br/dqqxi7fw1g';
+                window.location.href = '/cep';
               }}
               className="w-full text-lg h-14 shadow-xl hover:shadow-2xl transition-all"
             >
