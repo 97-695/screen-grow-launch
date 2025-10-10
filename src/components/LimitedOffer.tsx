@@ -1,12 +1,14 @@
-import { Clock, Package, TrendingUp } from "lucide-react";
+import { Clock, Package, TrendingUp, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface LimitedOfferProps {
   onBuyClick: () => void;
 }
 
 const LimitedOffer = ({ onBuyClick }: LimitedOfferProps) => {
+  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
     minutes: 0,
@@ -70,14 +72,26 @@ const LimitedOffer = ({ onBuyClick }: LimitedOfferProps) => {
               </div>
             </div>
 
-            <Button 
-              size="xl" 
-              variant="cta"
-              onClick={onBuyClick}
-              className="text-lg px-12 mb-8"
-            >
-              Garantir Meu Screen Grow
-            </Button>
+            <div className="flex flex-col gap-3 items-center mb-8">
+              <Button 
+                size="xl" 
+                variant="cta"
+                onClick={() => navigate('/cep')}
+                className="text-lg px-12"
+              >
+                Garantir Meu Screen Grow
+              </Button>
+              
+              <Button 
+                size="xl" 
+                variant="default"
+                onClick={onBuyClick}
+                className="text-lg px-12 bg-gradient-to-r from-destructive to-destructive/90 hover:from-destructive/90 hover:to-destructive text-destructive-foreground shadow-xl hover:shadow-2xl animate-pulse"
+              >
+                <Gift className="w-5 h-5" />
+                🎰 Ganhe um Prêmio Agora
+              </Button>
+            </div>
           </div>
 
           {/* Urgency Indicators */}

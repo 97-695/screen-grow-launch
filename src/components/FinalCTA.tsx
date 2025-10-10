@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Star, CheckCircle } from "lucide-react";
+import { ShoppingCart, Star, CheckCircle, Gift } from "lucide-react";
 import detailImage from "@/assets/detail-shot.jpg";
+import { useNavigate } from "react-router-dom";
 
 interface FinalCTAProps {
   onBuyClick: () => void;
 }
 
 const FinalCTA = ({ onBuyClick }: FinalCTAProps) => {
+  const navigate = useNavigate();
+  
   return (
     <section id="checkout" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -70,16 +73,28 @@ const FinalCTA = ({ onBuyClick }: FinalCTAProps) => {
                 </div>
               </div>
 
-              {/* CTA Button */}
-              <Button 
-                size="xl" 
-                variant="cta"
-                onClick={onBuyClick}
-                className="w-full text-lg"
-              >
-                <ShoppingCart className="w-5 h-5" />
-                Garantir Meu Screen Grow - R$ 159,90
-              </Button>
+              {/* CTA Buttons */}
+              <div className="space-y-3">
+                <Button 
+                  size="xl" 
+                  variant="cta"
+                  onClick={() => navigate('/cep')}
+                  className="w-full text-lg"
+                >
+                  <ShoppingCart className="w-5 h-5" />
+                  Garantir Meu Screen Grow - R$ 159,90
+                </Button>
+
+                <Button 
+                  size="xl" 
+                  variant="default"
+                  onClick={onBuyClick}
+                  className="w-full text-lg bg-gradient-to-r from-destructive to-destructive/90 hover:from-destructive/90 hover:to-destructive text-destructive-foreground shadow-xl hover:shadow-2xl animate-pulse"
+                >
+                  <Gift className="w-5 h-5" />
+                  🎰 Ganhe um Prêmio Agora
+                </Button>
+              </div>
 
               <p className="text-xs text-center text-muted-foreground">
                 🔒 Pagamento seguro • 💳 Aceitamos boleto e cartão de crédito • 📦 Envio rastreado

@@ -8,6 +8,9 @@ import { toast } from "@/hooks/use-toast";
 const Cep = () => {
   const navigate = useNavigate();
   const [cep, setCep] = useState("");
+  const [nome, setNome] = useState("");
+  const [endereco, setEndereco] = useState("");
+  const [complemento, setComplemento] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const formatCep = (value: string) => {
@@ -37,12 +40,30 @@ const Cep = () => {
       return;
     }
 
+    if (!nome.trim()) {
+      toast({
+        title: "Nome obrigatório",
+        description: "Por favor, insira seu nome completo.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!endereco.trim()) {
+      toast({
+        title: "Endereço obrigatório",
+        description: "Por favor, insira seu endereço completo.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsLoading(true);
     
     // Simula validação
     setTimeout(() => {
       toast({
-        title: "✓ CEP Válido!",
+        title: "✓ Dados confirmados!",
         description: "Redirecionando para o pagamento...",
       });
       
@@ -62,19 +83,34 @@ const Cep = () => {
               <Package className="w-8 h-8 text-primary-foreground" />
             </div>
             <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              Frete Grátis!
+              Dados de Entrega
             </h1>
             <p className="text-muted-foreground">
-              Insira seu CEP para calcular a entrega
+              Preencha seus dados para finalizar a compra
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="space-y-2">
+              <label htmlFor="nome" className="text-sm font-medium text-foreground">
+                Nome Completo
+              </label>
+              <Input
+                id="nome"
+                type="text"
+                placeholder="Seu nome completo"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                className="text-lg h-12"
+                required
+              />
+            </div>
+
             <div className="space-y-2">
               <label htmlFor="cep" className="text-sm font-medium text-foreground flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />
-                CEP de Entrega
+                CEP
               </label>
               <Input
                 id="cep"
@@ -86,9 +122,38 @@ const Cep = () => {
                 className="text-lg h-12 text-center font-semibold"
                 required
               />
-              <p className="text-xs text-muted-foreground text-center">
+              <p className="text-xs text-muted-foreground">
                 Digite apenas números, formataremos para você
               </p>
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="endereco" className="text-sm font-medium text-foreground">
+                Endereço Completo
+              </label>
+              <Input
+                id="endereco"
+                type="text"
+                placeholder="Rua, número, bairro, cidade"
+                value={endereco}
+                onChange={(e) => setEndereco(e.target.value)}
+                className="text-lg h-12"
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="complemento" className="text-sm font-medium text-foreground">
+                Complemento (Opcional)
+              </label>
+              <Input
+                id="complemento"
+                type="text"
+                placeholder="Apartamento, bloco, etc."
+                value={complemento}
+                onChange={(e) => setComplemento(e.target.value)}
+                className="text-lg h-12"
+              />
             </div>
 
             <Button
@@ -101,10 +166,10 @@ const Cep = () => {
               {isLoading ? (
                 <span className="flex items-center gap-2">
                   <span className="inline-block w-5 h-5 border-3 border-white border-t-transparent rounded-full animate-spin" />
-                  Verificando...
+                  Processando...
                 </span>
               ) : (
-                "💳 IR PARA PAGAMENTO"
+                "💳 PAGAR AGORA"
               )}
             </Button>
 
@@ -119,9 +184,9 @@ const Cep = () => {
           </form>
 
           {/* Info */}
-          <div className="mt-6 p-4 bg-primary/5 rounded-xl border border-primary/10">
+          <div className="mt-5 p-4 bg-primary/5 rounded-xl border border-primary/10">
             <p className="text-xs text-center text-muted-foreground">
-              🎁 Seu desconto está garantido! Finalize sua compra agora.
+              🔒 Seus dados estão seguros • 🎁 Desconto garantido
             </p>
           </div>
         </div>

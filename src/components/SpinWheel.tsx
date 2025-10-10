@@ -16,8 +16,7 @@ const prizes: Prize[] = [
   { id: 4, text: "R$ 30 OFF", color: "#8b5cf6" },
   { id: 5, text: "R$ 50 OFF", color: "#ef4444" },
   { id: 6, text: "15% OFF", color: "#f59e0b" },
-  { id: 7, text: "BRINDE EXTRA", color: "#06b6d4" },
-  { id: 8, text: "25% OFF", color: "#f97316" },
+  { id: 7, text: "25% OFF", color: "#f97316" },
 ];
 
 interface SpinWheelProps {

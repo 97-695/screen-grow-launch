@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Star } from "lucide-react";
+import { ShoppingCart, Star, Gift } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface HeroProps {
   onBuyClick: () => void;
 }
 
 const Hero = ({ onBuyClick }: HeroProps) => {
+  const navigate = useNavigate();
+  
   return (
     <section className="relative overflow-hidden bg-gradient-subtle">
       {/* Announcement Bar */}
@@ -47,16 +50,27 @@ const Hero = ({ onBuyClick }: HeroProps) => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col gap-4 justify-center lg:justify-start">
               <Button 
                 size="xl" 
                 variant="cta" 
-                onClick={onBuyClick}
+                onClick={() => navigate('/cep')}
                 className="group"
               >
                 <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Garantir Meu Screen Grow
               </Button>
+              
+              <Button 
+                size="xl" 
+                variant="default"
+                onClick={onBuyClick}
+                className="group bg-gradient-to-r from-destructive to-destructive/90 hover:from-destructive/90 hover:to-destructive text-destructive-foreground shadow-xl hover:shadow-2xl animate-pulse"
+              >
+                <Gift className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                🎰 Ganhe um Prêmio Agora
+              </Button>
+
               <Button 
                 size="xl" 
                 variant="outline"
