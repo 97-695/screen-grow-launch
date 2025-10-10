@@ -2,7 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart, Star, CheckCircle } from "lucide-react";
 import detailImage from "@/assets/detail-shot.jpg";
 
-const FinalCTA = () => {
+interface FinalCTAProps {
+  onBuyClick: () => void;
+}
+
+const FinalCTA = ({ onBuyClick }: FinalCTAProps) => {
   return (
     <section id="checkout" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -70,7 +74,7 @@ const FinalCTA = () => {
               <Button 
                 size="xl" 
                 variant="cta"
-                onClick={() => window.location.href = 'https://go.ironpayapp.com.br/dqqxi7fw1g'}
+                onClick={onBuyClick}
                 className="w-full text-lg"
               >
                 <ShoppingCart className="w-5 h-5" />

@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Star } from "lucide-react";
 
-const Hero = () => {
+interface HeroProps {
+  onBuyClick: () => void;
+}
+
+const Hero = ({ onBuyClick }: HeroProps) => {
   return (
     <section className="relative overflow-hidden bg-gradient-subtle">
       {/* Announcement Bar */}
@@ -47,7 +51,7 @@ const Hero = () => {
               <Button 
                 size="xl" 
                 variant="cta" 
-                onClick={() => window.location.href = 'https://go.ironpayapp.com.br/dqqxi7fw1g'}
+                onClick={onBuyClick}
                 className="group"
               >
                 <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />

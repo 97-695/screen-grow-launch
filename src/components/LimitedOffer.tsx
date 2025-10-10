@@ -2,7 +2,11 @@ import { Clock, Package, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
-const LimitedOffer = () => {
+interface LimitedOfferProps {
+  onBuyClick: () => void;
+}
+
+const LimitedOffer = ({ onBuyClick }: LimitedOfferProps) => {
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
     minutes: 0,
@@ -31,9 +35,6 @@ const LimitedOffer = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const scrollToCheckout = () => {
-    window.location.href = 'https://go.ironpayapp.com.br/dqqxi7fw1g';
-  };
 
   return (
     <section className="py-16 md:py-24 bg-destructive/5 border-y-4 border-destructive">
@@ -72,7 +73,7 @@ const LimitedOffer = () => {
             <Button 
               size="xl" 
               variant="cta"
-              onClick={scrollToCheckout}
+              onClick={onBuyClick}
               className="text-lg px-12 mb-8"
             >
               Garantir Meu Screen Grow

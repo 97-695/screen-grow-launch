@@ -20,8 +20,12 @@ const prizes: Prize[] = [
   { id: 8, text: "25% OFF", color: "#f97316" },
 ];
 
-const SpinWheel = () => {
-  const [isOpen, setIsOpen] = useState(true);
+interface SpinWheelProps {
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+const SpinWheel = ({ isOpen, onOpenChange }: SpinWheelProps) => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [rotation, setRotation] = useState(0);
   const [prize, setPrize] = useState<Prize | null>(null);
@@ -64,7 +68,7 @@ const SpinWheel = () => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fade-in p-4">
       <div className="relative bg-gradient-to-br from-background to-background/95 rounded-3xl shadow-2xl max-w-lg w-full p-6 md:p-8 animate-scale-in border-2 border-primary/20">
         <button
-          onClick={() => setIsOpen(false)}
+          onClick={() => onOpenChange(false)}
           className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors z-10 bg-background/80 rounded-full p-1 hover:bg-background"
         >
           <X className="w-6 h-6" />
@@ -228,7 +232,7 @@ const SpinWheel = () => {
               size="lg"
               variant="cta"
               onClick={() => {
-                setIsOpen(false);
+                onOpenChange(false);
                 window.location.href = '/cep';
               }}
               className="w-full text-lg h-14 shadow-xl hover:shadow-2xl transition-all"
@@ -238,7 +242,7 @@ const SpinWheel = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => setIsOpen(false)}
+              onClick={() => onOpenChange(false)}
               className="w-full"
             >
               Continuar Navegando
